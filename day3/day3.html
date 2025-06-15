@@ -1,0 +1,100 @@
+<html>
+    <head>
+       <style>
+        
+        p{
+            color:blue;
+        }
+        .para{
+            color:blueviolet
+        }
+        #head{
+            color:aqua;
+        }
+        h1 + p {
+  color: purple;
+}
+        .box{
+            width:200px;
+            height:300px;
+            border: 10px solid black;
+            margin: 20px;
+            font-size:18px;
+            padding: 20px;
+            color:red;
+        }
+        .content-box{
+            box-sizing: content-box;
+            background-color: green;
+        }
+        .border-box{
+            box-sizing: border-box;
+            background-color: blue;
+        }
+        .normal{
+            white-space: normal;
+        }
+        .nowrap{
+            white-space: nowrap;
+        }
+        .pre{
+            white-space: pre;
+        }
+        .pre-line{
+            white-space: pre-line;
+        }
+        .pre-wrap{
+            white-space: pre-wrap;
+        }
+        .text{
+            text-transform: uppercase;
+            word-spacing: 20px;
+            outline: 3px dashed red;
+        }
+
+
+       </style> 
+    </head>
+    <body>
+        <h1>
+            Hi 
+        </h1>
+        <p>this is for selector</p>
+        <p class="para">class selector,id selector,element selector</p>
+        <p class="para" id="head">Hello world</p>
+        <div class="box content-box">
+            <h1>apple</h1>
+            <p>Paragrapg tga</p>
+        </div>
+        <div class="box border-box">
+            <h1>apple</h1>
+            <p>Paragrapg tga</p>
+        </div>
+        <div>
+            <p class="normal">this     is   a           normal                              whitespace
+                hi india
+            </p>
+             <p class="nowrap">this     is   a           normal                              whitespace
+
+
+                hi nz
+            </p>
+            <p class="pre">this     is   a           normal                              whitespace
+
+
+                hi singapore
+            </p>
+            <p class="pre-line">this     is   a           normal                              whitespace
+
+
+                hi singapore
+            </p>
+        <p class="pre-wrap">this     is   a           normal                              whitespace
+
+
+                hi canada
+            </p>
+            </div>
+        <p class="text">Text transform and more text</p>
+    </body>
+</html>

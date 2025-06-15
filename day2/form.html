@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <title>Form Sample</title>
+        <style>
+            form{
+                padding: 20px;
+                margin:0 auto;
+                border: 3px solid black;
+                width:500px;
+                background-color: grey;
+            }
+            .form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .form-row label {
+      width: 140px;
+    }
+    .form-row input[type="text"],
+    .form-row input[type="mail"],
+    .form-row input[type="email"],
+    .form-row input[type="password"],
+    .form-row input[type="number"],
+    .form-row input[type="tel"],
+    .form-row input[type="date"],
+    .form-row input[type="week"],
+    .form-row input[type="url"],
+    .form-row input[type="search"],
+    .form-row input[type="time"],
+    .form-row input[type="range"],
+    .form-row input[type="color"],
+    .form-row input[type="file"] {
+      flex: 1;
+      padding: 6px 8px;
+      font-size: 1rem;
+    }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align:center">Application Form</h1>
+        <div style="align-items:center">
+        <form id="applicationForm" style="text-align:center">
+            <div class="form-row">
+            <label for="username">Name: </label>
+            <input type="text" name="username" id="username" placeholder="enter name" autofocus autocomplete="on">
+            </div>
+            <div class="form-row">
+            <label for="usermailid">Mail ID:</label>
+            <input type="mail" id="usermailid" name="usermailid" placeholder="enter mailid">
+            </div>
+            <div class="form-row">
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" placeholder="enter pwd"><br><br>
+            </div>
+            <div class="form-row">
+            <label type="age">Age: </label>
+            <input type="number" id="age" name="age" min="18"><br><br>
+            </div>
+            <div class="form-row">
+            <label for="countrycode">Phone number: </label>
+            <select id="countrycode" name="countrycode">
+                <option value="+91">+91(India)</option>
+                <option value="+81">+81(Japan)</option>
+                <option value="+64">+64(New Zealand)</option>
+            </select>
+            <input type="tel" id="phonenumber" placeholder="enter phone number" name="phone">
+            </div>
+            <div class="form-row">
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob" name="dob"><br><br>
+            </div>
+            <div class="form-row">
+            <label for="week">WeekNumber</label>
+            <input type="week" id="week" name="week number" step="5"><br><br>
+            </div>
+            <div class="form-row">
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website"><br><br>
+            </div>
+            <div class="form-row">
+            <label for="search">Search: </label>
+            <input type="search" id="search" name="search"><br><br>
+            </div>
+            <div class="form-row">
+            <label for="time">Time: </label>
+            <input type="time" id="time" name="time"><br><br>
+            </div>
+            <div class="form-row">
+                <label for="satisy">Satisfaction(1-10): </label>
+                <input type="range" id="satisfy" min="1" max="10"><br><br>
+            </div>
+            <div class="form-row">
+                <label for="color">Fav Color: </label>
+                <input type="color" id="color" name="favcolor"><br><br>
+            </div>
+            <div class="form-row" style="justify-content: center">
+            <input type="checkbox" name="signin" id="checkbox">Always remember me
+            </div>
+            <div class="form-row"  style="justify-content: center">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="Male" id="male">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" value="Female" id="female">
+            </div>
+            <div class="form-row">
+            <label for="resume">Upload resume:</label>
+            <input type="file" name="resume" id="resume" multiple><br><br>
+            </div>
+            <input type="reset" value="reset-form" id="reset">
+            <input type="button" value="Next" id="nextbutton"><br><br>
+            <input type="submit" id="submit">
+        
+        </div>
+        </form>
+        <div id="output"></div>
+
+        <div>
+            <h3>Watch video</h3>
+            <video width="320" height="200" controls>
+                <source src="day2/qr_code_op.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div>
+            <h3>Hear an audio</h3>
+            <audio controls>
+                <source src="day2/file_example_MP3_700KB.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <script>
+document.getElementById("applicationForm").addEventListener("submit", function(e) {
+    e.preventDefault(); 
+
+    const name = document.getElementById("username").value;
+    const email = document.getElementById("usermailid").value;
+    const password = document.getElementById("password").value;
+    const age = document.getElementById("age").value;
+    const phone = document.getElementById("phonenumber").value;
+    const countryCode = document.getElementById("countrycode").value;
+    const dob = document.getElementById("dob").value;
+    const week = document.getElementById("week").value;
+    const website = document.getElementById("website").value;
+    const search = document.getElementById("search").value;
+    const time = document.getElementById("time").value;
+    const satisfaction = document.getElementById("satisfy").value;
+    const color = document.getElementById("color").value;
+    const remember = document.getElementById("checkbox").checked ? "Yes" : "No";
+    const resume = document.getElementById("resume").value;
+
+    let gender = "";
+    if (document.getElementById("male").checked) gender = "Male";
+    else if (document.getElementById("female").checked) gender = "Female";
+    else gender = "Not selected";
+
+    document.getElementById("output").innerHTML = `
+        Name: ${name}
+        Email: ${email}
+        Password: ${password}
+        Age: ${age}
+        Phone: ${countryCode} ${phone}
+        DOB: ${dob}
+        Week: ${week}
+        Website: ${website}
+        Search: ${search}
+        Time: ${time}
+        Satisfaction: ${satisfaction}
+        Favorite Color: ${color}
+        Remember Me: ${remember}
+        Gender: ${gender}
+    `;
+});
+</script>
+    </body>
+</html> 

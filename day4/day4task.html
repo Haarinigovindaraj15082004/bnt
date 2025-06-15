@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                height:500vh;
+            }
+            .box{
+                width: 100vw;
+                border:5px solid black;
+                padding:25px;
+                margin:25px;
+                height: 20vh;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .relative-box{
+                background-color: lightgreen;
+                position:relative;
+                top:0;
+                left:12;
+            }
+            .absolute-box{
+                background-color: rgb(103, 255, 255);
+                position:absolute;
+                top:0;
+                left:0;
+                z-index: 1;
+            }
+            .fixed-box{
+                background-color: orange;
+                position:fixed;
+                z-index: 10;
+            }
+            .sticky-box{
+                background-color: rgb(255, 7, 160);
+                position:sticky;
+                bottom:auto;
+                top:0;
+            }
+            div ul{
+                text-align: center;
+                padding: 35px;
+            }
+            ul li{
+                color:black;
+                list-style-type: none;
+            }
+            span{
+                color:blueviolet;
+                text-align: center;
+                padding: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                word-spacing: normal;
+            }
+            .list::before{
+                content: "♥  ";
+                color:rgb(251, 255, 0);
+            }
+            span:hover::before{
+                content:"🙏🏻 Good ";
+                color:rgb(0, 133, 89);
+            }
+            span:hover::after{
+                content:"  Folks!!😍 ";
+                color:rgb(255, 0, 93);
+            }
+            .box-container{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: bisque;
+            }
+            .box-small{
+                height:150px;
+                width:150px;
+                padding:50px;
+                margin:10px;
+                background-color: pink;
+            }
+            
+            .zoom:hover{
+                transform:scaleX(120%) scaleY(150%);
+                margin:5px;
+            }
+            .search-container{
+                background-color: blue;
+                height: 20vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position:relative;
+            }
+            .input-field{
+                position:relative;
+            }
+            .search-icon{
+                position:absolute;
+                right:650; 
+            }
+            input[type=text]{
+                width:250px;
+                padding: 25px;
+                position:relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div>
+                <div class="box relative-box">Relative box</div>
+                <div class="box sticky-box">Sticky box</div>
+                <div class="box" style="background-color:greenyellow">Box</div>
+                <div class="box absolute-box" style="width:20vw">Absolute box</div>
+                <div class="box fixed-box">Fixed box</div>
+            </div>
+        </div>
+        <div>
+                <ul>
+                    <li class="list">Welcome</li>
+                    <li class="list">to</li>
+                    <li class="list">cascading</li>
+                    <li class="list">style</li>
+                    <li class="list">sheets</li>
+                </ul>
+        </div>   
+        <div>
+            <span>morning</span>
+        </div>
+        <div class="box-container">
+            <div class="box-small zoom" style="background-color:cyan">
+                animation
+            </div>
+            <div class="box-small zoom">
+                transition
+            </div>
+            <div class="box-small zoom" style="background-color:cyan">
+                animation
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search.." name="search" class="input-field" id="search">
+            <a class="search-icon" href="#search">🔍</a>
+        </div>
+    </body>
+</html>

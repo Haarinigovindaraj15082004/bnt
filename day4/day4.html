@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin:0;
+                box-sizing: border-box;
+            }
+            .container{
+                padding: 20px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                margin-top:0;
+            }
+            .container1{
+                width:100vh;
+                height: 100vh;
+                border:5px solid black;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                margin: 20px;
+                background-color: lightblue;
+                position:relative;
+               
+            }
+            .container2{
+                width:75vh;
+                height: 75vh;
+                border:5px solid black;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                margin: 20px;
+                background-color: lightgreen;
+                
+            }
+            .container3{
+                width:50vh;
+                height: 50vh;
+                border:5px solid black;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                margin: 20px;
+                background-color: lightcoral;
+                
+            }
+            .box1{
+                display: flex;
+                flex-direction: column;
+                background-color: navy;
+                color: white;
+                height:150px;
+                width: 150px;
+                border: 2px solid white;
+                text-align: center;
+                justify-content: center;
+            }
+            .box2{
+                display: flex;
+                flex-direction: column;
+                background-color: darkgreen;
+                color: white;
+                height:100px;
+                width: 100px;
+                border: 2px solid white;
+                text-align: center;
+                justify-content: center;
+                position:absolute;
+                top:0;
+                left:0;
+            }
+            .box3{
+                display: flex;
+                flex-direction: column;
+                background-color: maroon;
+                color: white;
+                height:50px;
+                width: 50px;
+                border: 2px solid white;
+                text-align: center;
+                justify-content: center;
+                position:absolute;
+                top:150;
+                left:180;
+            
+            }
+            h1{
+                position:fixed;
+                background-color: blueviolet;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Fixed position</h1>
+            </header>
+            <div class="container1">
+                <div class="box1">Box1</div>
+                <div class="container2">
+                    <div class="box2">Box2</div>
+                    <div class="container3">
+                        <div class="box3">Box3</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
