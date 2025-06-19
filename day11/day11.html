@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>FUNCTION</h1>
+        <label for="age">Enter your age:</label>
+        <input type="number" id="age" name="age">
+        <button onclick="checkAge()">Submit</button>
+        <p id="result"></p>
+    <script>
+        function checkAge(){
+            let age = document.getElementById("age").value;
+            let result = document.getElementById("result");
+            if (age>18) {
+                alert("adult");
+            }
+            else {
+                result.textContent = "minor";
+            }
+        }
+    </script>
+    </div>
+    <hr>
+
+    <div>
+        <h1>FOR LOOPS AND CONSOLE</h1>
+        <button onclick="loop()">For loop button</button>
+        <script>
+            function loop(){
+                for (let i=1;i<=10;i++){
+                    console.log(i);
+                }
+            }
+        </script>
+    </div>
+    <hr>
+
+    <div>
+        <h1>VARIABLE</h1>
+        <p>Check console for output</p>
+        <script>
+            const country = "India";
+            console.log("const country:", country);
+
+            let a = 15;
+            console.log("let a:", a);
+
+            var b =10;
+            console.log("var b:" ,b );
+
+            {
+                let a = 20;
+                console.log("let a inside block:", a);
+            }
+
+            console.log("let a:", a)
+        </script>
+    </div>
+    <hr>
+
+    <div>
+        <h1>GET ELEMENT BY CLASS NAME</h1>
+        <h2 class="greeting">Hello world</h2>
+        <p class="greeting">start js class</p>
+        <p class="greeting">get element by class name</p>
+        <button onclick="class1()">Click</button>
+        <script>
+            function class1(){
+                let elements = document.getElementsByClassName("greeting");
+
+                for(let i=0; i < elements.length;i++){
+                    elements[i].style.color = "red"
+                    elements[i].innerText = "Updated Text " + (i + 1);
+                }
+            }
+        </script>
+    </div>
+    <hr>
+
+    <div>
+        <h1>querySelector vs querySelectorAll</h1>
+        <h2 id="title">Hello, Haarini!</h2>
+        <p class="message">Welcome to my page.</p>
+        <ul>
+            <li class="item">Apple</li>
+            <li class="item">Banana</li>
+            <li class="item">Orange</li>
+        </ul>
+        <button onclick="changeContent()">Click Me</button>
+        <button onclick="highlightall()">ALL</button>
+        <script>
+        function changeContent() {
+            // Change text content using ID
+            document.getElementById("title").innerText = "Hi, welcome back!";
+
+            // Change text using class (first match)
+            document.querySelector(".message").textContent = "You clicked the button!";
+            // You can also add HTML
+            document.querySelector(".message").innerHTML = "<b>Message updated</b>";
+  }
+        function highlightall(){
+            let abc = document.querySelectorAll(".item");
+            abc.forEach((element,index) => {
+                element.textContent = "Updated item" + (index+1);
+                element.style.backgroundColor = "red";
+              })
+        }
+        </script>
+    </div>
+    <hr>
+    
+</body>
+</html>
