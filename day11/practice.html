@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+            color:white;
+        }
+        .green{
+            background-color:green;
+            color:yellow;
+        }
+        .pink{
+            background-color:pink;
+            color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- QUERYSELECTORALL -->
+        <p class="para">hi</p>
+        <p class="para">hello</p>
+        <p class="para">world</p>
+        <button onclick="handleclick()">Click</button>
+        <script>
+            function handleclick(){
+            const p = document.querySelectorAll(".para");
+            for(var i=0; i < p.length;i++){
+                var a = p[i];
+                a.textContent = "updated" + (i+1);
+            }
+        }
+        </script>
+    </div>
+
+    <div>
+        <!-- CLASSLIST -->
+         <div id="box" class="red">
+            <h1>Javascript</h1>
+         </div>
+         <button onclick="colorChange()">click</button>
+         <script>
+            function colorChange(){
+                var box = document.getElementById("box");
+                box.classList.remove("red")
+                box.classList.add("green");
+                box.classList.toggle("pink")
+            }
+         </script>
+    </div>
+</body>
+</html>

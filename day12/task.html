@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // TYPEOF
+        let str = "hi";
+        let num = 15;
+        let char = "a";
+        console.log("typeof", typeof(str)) ;
+        console.log("typeof", typeof(num)) ;
+        console.log("typeof", typeof(char)) ;
+
+        // merge string & number
+        const name = "abi";
+        const mark = 95;
+        console.log("merge string and number :  ",name, " scored ", mark, "marks");
+        console.log("merge string and number :  "+name+ " scored "+ mark+ "marks");
+
+        //charAt
+        let first = "apple";
+        let second = "banana";
+        let ch1 = first.charAt(0);
+        let ch2 = second.charAt(4);
+        console.log(ch1+ch2);
+
+        //lastindexof
+        let text = "I love mango and mango juice";
+        let last = text.lastIndexOf("mango");
+        console.log("lastindexof:" , last);
+
+        let fruit = "banana";
+        console.log(fruit.lastIndexOf("a"));      
+        console.log(fruit.lastIndexOf("a", 3)); 
+
+        //typecast
+        let price = 150;
+        let tax = "50";
+        let total = price + Number(tax);
+        console.log("typecast: ",total);
+
+        //without typecast
+        let fakeprice = 150;
+        let faketax = "50";
+        let faketotal = price + tax;
+        console.log("without typecast: ",faketotal)
+
+        //isinteger
+        let a = 5;
+        let b = 1.25;
+        console.log(Number.isInteger(a));
+        console.log(Number.isInteger(b));
+
+        //parseint and parsefloat
+        console.log(parseInt(42));
+        console.log(parseInt("42"));
+        console.log(parseInt(42.0548785));
+        console.log(parseFloat(52));
+        console.log(parseFloat(52.949451));
+
+        //tofixed
+        let decimal = 52.8775158;
+        let fixed = decimal.toFixed(4);
+        console.log(fixed);
+
+
+        //variable
+        const country = "India";
+            console.log("const country:", country);
+            let var1 = 15;
+            console.log("let var1:", var1);
+            var var2 =10;
+            console.log("var2:" ,var2 );
+            {
+                let var1 = 20;
+                console.log("let var1 inside block:", var1);
+            }
+            console.log("let var1:", var1)
+
+        //array
+        let arr = [1,2,3,4,5];
+        console.log(arr.pop());
+        console.log(arr.push(25));
+        console.log(arr);
+        console.log(arr.shift())
+        console.log(arr.unshift(89));
+        console.log(arr);
+        delete arr[0];
+        console.log(arr);
+        let arr_rev = arr.reverse();
+        console.log(arr_rev);
+
+        //merge 2 arrays
+        const arr1 = ["hi","hello",25];
+        const arr2 = [58,"apple",1000];
+        let result =   arr1.concat(arr2); //concat
+        console.log(result); 
+        let result_spread = [...arr1,...arr2]; //spread(...) operator
+        console.log(result_spread);
+        let result_spread1 = [...arr1,"new",...arr2];
+        console.log(result_spread1);
+
+        //object
+        const student = {
+            id: 101,
+            name: "Haarini",
+            course: "Web Development",
+            semester: 5,
+            marks: {
+            maths:    90,
+            science:  85,
+            english:  92,
+            history:  88
+            },
+            attendance: 96
+        };
+        console.log("Maths mark:", student.marks.maths);
+        for (let subject in student.marks){
+            console.log(subject + ":" + student.marks[subject]);
+        }
+
+        //splice
+        let fruits = ["apple", "banana", "cherry", "mango"];
+        fruits.splice(1, 2);  // removes 2 items starting from index 1
+        console.log(fruits);  
+
+        let numbers = [1, 2, 5];
+        numbers.splice(2, 0, 3, 4);  // add 3, 4 at index 2 without removing anything
+        console.log(numbers); 
+
+        let colors = ["red", "green", "blue"];
+        colors.splice(1, 1, "yellow");  // replace 1 element at index 1 with "yellow"
+        console.log(colors);
+
+        //nan
+        let sr="teacher";
+        let output=Number(sr);
+        console.log(output);
+
+         //switch
+        let day="wed";
+        switch(day){
+            case "mon":
+                console.log("start of week")
+                break;
+            case "wed":
+                console.log("mid of week")
+                break;
+            default :
+                console.log("just a day in week")
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="value"></p>
+    <button onclick="check(true)">true</button>
+    <button onclick="check(false)">false</button>
+    <script>
+        let currentValue;
+        function randomChecker() {
+            const choices = [true, 1, "hello", [], {}, "0", -1, false, 0, "", null, undefined, NaN];
+            const index = Math.floor(Math.random() * choices.length);
+            
+            currentValue = choices[index];
+            document.getElementById("value").textContent = "value " + format(currentValue);
+
+            function format(val){
+                if (val === null)      return "null";
+                if (val === undefined) return "undefined";
+                if (Number.isNaN(val)) return "NaN";
+                if (typeof val === "string") return `"${val}"`;
+                if (Array.isArray(val)) return "[]";
+                if (typeof val === "object") return "{}";
+                return String(val);
+            }
+        }
+        function check(val){
+            let a = Boolean(currentValue);
+            if (a === val){
+                alert("correct guess")
+            }
+            else{
+                alert("wrong guess");
+            }
+            const again = confirm("do you want to continue?")  
+                if(again){
+                    randomChecker();
+                }
+                else{
+                    alert("thanks for playing byee")
+                }
+        }
+        randomChecker();
+    </script>
+</body>
+</html>
