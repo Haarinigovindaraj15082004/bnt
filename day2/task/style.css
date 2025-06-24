@@ -1,0 +1,132 @@
+body{
+    background-image: url("bg_mountain.jpg");
+    background-size: cover;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+nav{
+    background-color: white;
+}
+a{
+    justify-content: space-around;
+}
+.navbardetail{
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 30px;
+}
+.head{
+    color:white;
+    font-size:25px;
+    text-align:center;
+}
+.success{
+    color:white;
+    font-size:35px;
+    text-align:center;
+}
+.btn-booknow{
+    background-color:white;
+    color:black;
+    height: 50px;
+    width: 150px;
+    padding: 15px;
+    border-radius: 5px;
+}
+.center-container{
+    text-align: center;
+}
+.aboutme{
+    background-color: white;
+    margin: 15px;
+    padding:50px;
+    height: 450px;
+}
+.readbtn{
+    background-color: black;
+    color:white;
+    height:50px;
+    width:100px;
+}
+.consultbtn{
+    background-color: white;
+    color:black;
+    height:50px;
+    width:100px;
+    border-radius: 5px;
+}
+.man{
+    height:380px;
+    width: 500px;
+    float: right;
+    margin:20px;
+    padding:20px;
+}
+.container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding-bottom: 50px;
+    }
+
+.card {
+      background-color: transparent;
+      border: 3px solid white;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      color:white;
+    }
+.line {
+      height: 1px;
+      background-color: black;
+      margin: 10px 0;
+    }
+.help{
+    color:white;
+    font-size:25px;
+    padding:25px;
+    margin-left:250px;
+}
+.pad-btn{
+    padding-bottom: 20px;
+}
+.para{
+    font-size: 25px;
+}
+.contact-section{
+    background-color: aqua;
+    display:flex;
+
+}
+.left, .right {
+      flex: 1;
+      min-width: 300px;
+      padding: 50px;
+      margin: 100px;
+    }
+.submitbtn{
+    color:white;
+    background-color: black;
+    height: 50px;
+    width: 150px;
+    text-align:center;
+}
+form{
+    background-color: rgb(217, 139, 36);
+    padding: 35px
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.form-row label {
+  width: 120px;
+  font-weight: bold;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 10px;
+}

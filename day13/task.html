@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mydiv{
+            height:100px;
+            width:100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <!-- countdown -->
+    <h1> Countdown : <span id="countdown">10</span></h1>
+    <hr>
+    <!-- stopwatch -->
+    <h1> Stopwatch </h1>
+    <div id="time">  00:00:00  </div>
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="reset()">Reset</button>
+    <hr>
+    <!-- this keyword -->
+    <h2>keyword - check console</h2>
+    <hr>
+    <!-- map,filter,reduce -->
+     <h1>map,filter and reduce -> check console</h1>
+     <hr>
+    <!-- try,catch -->
+     <h1>try,catch,finally - check console</h1>
+     <hr>
+    <!-- function -->
+     <h1>Function</h1>
+     <button id="mydiv">dblClick here</button>
+    <script>
+        //countdown
+        let count = 10;
+        let countdownElement = document.getElementById("countdown");
+        let timer = setInterval(()=>
+        {if (count<0){
+            clearInterval(timer);
+            countdownElement.textContent = "Time's up!!";
+        }else{
+            countdownElement.textContent = count;
+            count--;}
+        },500);
+    
+        //stopwatch
+        let seconds=0;
+        let minutes=0;
+        let hours=0;
+        let stopwatch;
+        let running=false;
+
+        function displayTime(){
+            let h = hours < 10 ? "0" + hours : hours;
+            let m = minutes < 10 ? "0" + minutes : minutes;
+            let s = seconds < 10 ? "0" + seconds : seconds;
+            document.getElementById("time").textContent = `${h} : ${m} : ${s}`;
+        }
+
+        function start(){
+            if(!running){
+                stopwatch = setInterval(()=>{
+                    seconds++;
+                    if(seconds===60){
+                        minutes++;
+                        if(minutes===60){
+                            hours++;
+                        }
+                    }
+                displayTime();
+                },1000);
+            }
+        }
+
+        function stop(){
+            clearInterval(stopwatch);
+            running = false;
+        }
+
+        function reset(){
+            clearInterval(stopwatch);
+            seconds=0;
+            minutes=0;
+            hours=0;
+            runnning = false;
+            displayTime();
+        }
+
+        //this keyword
+        let person = {
+            name : "HAarini",
+            age : 21,
+            greet: function(){
+                console.log("hello", this.name);
+            }
+        }
+        person.greet();
+
+        //map,filter,reduce
+        let arr = [1,2,3,4,5];
+        let doubled = arr.map(arr=>arr*2);
+        console.log("arr: ",arr);
+        console.log("map: ",doubled);
+        let evens = arr.filter(arr=>arr%2===0);
+        console.log("evens: ",evens);
+
+        //try,catch,finally
+        try{
+            let a = 10;
+            let b = 0;
+            if (b===0){
+                throw new Error("Cannot divide by zero");
+            }
+            result = a/b;
+            console.log("result", result);
+            }
+            catch(error){
+                console.log("Error:", error.message);
+            }
+            finally{
+                console.log("Finally");
+            }
+
+            //function
+            document.getElementById("mydiv").addEventListener("dblclick",() => {
+            alert("double clicked")
+        })
+        document.getElementById("mydiv").addEventListener("mouseover",function() {
+            this.style.backgroundColor = "yellow";
+        })
+    </script>
+</body>
+</html>

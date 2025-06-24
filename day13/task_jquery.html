@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: coral;
+      position: relative;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- get set -->
+    <h1>get and set</h1>
+    <input type="text" id="name" value="haar"/>
+    <button onclick="getvalue()">Getvalue</button>
+    <button onclick = "setvalue()">Setvalue</button>
+    <hr>
+    <!-- manipulate -->
+    <h1>manipulate</h1>
+    <p id="demo">hello <b>world</b></p>
+    <hr>
+    <!-- add remove toggle -->
+     <h1 id="h">add remove toggle</h1>
+     <button onclick="add()">add</button>
+     <button onclick="remove()">remove</button>
+     <button onclick="toggle()">toggle</button>
+     <hr>
+     <!-- event handle -->
+      <h1>event handling</h1>
+      <button id="btn">click</button>
+      <p id="para"></p>
+      <hr>
+      <!-- animate -->
+       <h1>animate</h1>
+        <div id="box"></div>
+        <button onclick="animateBox()">Animate</button>
+    <script>
+        //get set
+        function getvalue(){
+            let value = $('#name').val();//get
+            alert("Value is: " + value);
+        }
+        function setvalue(){
+            $('#name').val("hari");//set
+        }
+
+        //manipulate
+        let content = $('#demo').html();  
+        console.log(content);
+        $('#demo').html('Hi <i>Haarini</i>');//set
+
+        //add remove toggle cls
+        function add(){
+            $('#h').addClass('highlight');
+        }
+        function remove(){
+            $('#h').removeClass('highlight');
+        }
+        function toggle(){
+            $('#h').toggleClass('highlight');
+        }
+
+        //event handle
+        $('#btn').click(function () {
+            $('#para').text("Button clicked!");
+        });
+
+        //animate
+        function animateBox() {
+            $('#box').animate({
+                width: '200px',
+                height: '200px',
+                left: '100px',
+                opacity: 0.5
+            }, 1000); 
+            }
+    </script>
+</body>
+</html>

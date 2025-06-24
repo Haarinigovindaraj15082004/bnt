@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>Navigation menu</title>
+        <style>
+           *{
+                margin:0;
+                padding: 0;
+            }
+            body{
+                background-color: bisque;
+            }
+            nav{
+                display:flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: black;
+            }
+            li{
+                list-style: none;
+            }
+            
+            li a:hover{
+                background-color:  rgb(18, 42, 18);
+                color:greenyellow;
+                border-radius: 9px;
+                padding: 10px;
+            }
+            
+            li a:active{
+                background-color:  rgb(78, 0, 65);
+                color:rgb(234, 47, 255);
+                border-radius: 9px;
+                padding: 10px;
+}
+                
+            li a:visited{
+                color:rgba(2, 165, 229, 0.523);
+            }
+                
+            a{
+                display: inline-block;
+                color: white  !important;
+            }
+            ul{
+                display: flex;
+                gap:40px;
+            }
+            .card{
+                background-color: white;
+                border-radius: 10px;
+                border: 3px solid black;
+                margin: 20px;
+                height: 500px;
+                width: 500px;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 35px;
+            }
+            .container{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+        @media (max-width: 768px) {
+.container {
+                flex-direction: column; 
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 90%;
+            }
+        }
+        </style>
+    </head>
+    <body>       
+        <div>
+            <nav>
+                <div>
+                    <h1 style="color:white">Navbar</h1>
+                </div>
+                <div>
+                    <ul>
+                        <li> <a href="https://www.google.com">Home</a> </li>
+                        <li> <a href="https://www.google.com">About</a> </li>
+                        <li> <a href="https://www.google.com">Services</a> </li>
+                        <li> <a href="https://www.google.com">Contact</a> </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <div class="container">
+                <div class="card column">
+                    <h1>Card</h1>
+                    <p>Card layout using border,padding,margin and bg color</p>
+                    <button style="font: inherit ; background-color: aqua; color: rebeccapurple;border-radius:5px">Let's Goo!</button>
+                </div>
+                <div class="card column">
+                    <h1>Card</h1>
+                    <p>Card layout using border,padding,margin and bg color</p>
+                    <button style="font: inherit ; background-color: aqua; color: rebeccapurple;border-radius:5px">Let's Goo!</button>
+                </div>
+                <div class="card column">
+                    <h1>Card</h1>
+                    <p>Card layout using border,padding,margin and bg color</p>
+                    <button style="font: inherit ; background-color: aqua; color: rebeccapurple;border-radius:5px">Let's Goo!</button>
+                </div>
+                <div class="card column">
+                    <h1>Card</h1>
+                    <p>Card layout using border,padding,margin and bg color</p>
+                    <button style="font: inherit ; background-color: aqua; color: rebeccapurple;border-radius:5px">Let's Goo!</button>
+                </div>
+                <div class="card column">
+                    <h1>Card</h1>
+<p>Card layout using border,padding,margin and bg color</p>
+                    <button style="font: inherit ; background-color: aqua; color: rebeccapurple;border-radius:5px">Let's Goo!</button>
+                </div>
+                <div class="card column">
+                    <h1>Card</h1>
+                    <p>Card layout using border,padding,margin and bg color</p>
+                    <button style="font: inherit ; background-color: aqua; color: rebeccapurple;border-radius:5px">Let's Goo!</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
