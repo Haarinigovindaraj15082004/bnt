@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let now = new Date();
+        console.log(now.toDateString());
+        console.log(now.getFullYear());
+        console.log(now.getDate());
+        console.log(now.getDay());
+        console.log(now.getMonth());
+
+        let jstring = '{"name":"hari","age":21}';
+        parsedObj = JSON.parse(jstring);
+        console.log(parsedObj);
+        let back = JSON.stringify(parsedObj);
+        console.log(back);
+
+        let name = "haarini"
+        try{
+            console.log(name);
+        }
+        catch(error){
+            console.log("error found");
+        }
+        finally{
+            console.log("finally block");
+        }
+
+        let obj = {name:"rajesh", age:35, job:"developer"};
+        console.log(Object.keys(obj));
+        console.log(Object.values(obj));
+        console.log(Object.entries(obj));
+        obj.city = "chennai";
+        console.log(obj);
+        delete (obj.job);
+        console.log(obj);
+    </script>
+</body>
+</html>
