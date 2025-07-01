@@ -8,7 +8,31 @@
 <body>
     <h1>window event</h1>
     <script>
-        
+        // Page Load
+        window.addEventListener('load', function () {
+        console.log('Page fully loaded');
+        });
+
+        // DOM Ready (before images load)
+        window.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM fully loaded');
+        });
+
+        // Window Resize
+        window.addEventListener('resize', function () {
+        console.log('Window resized to', window.innerWidth, 'x', window.innerHeight);
+        });
+
+        // Scroll
+        window.addEventListener('scroll', function () {
+        console.log('Page is being scrolled');
+        });
+
+        // Before Unload
+        window.addEventListener('beforeunload', function (e) {
+        e.preventDefault();
+        e.returnValue = ''; // Standard way to trigger a confirmation dialog
+        });
     </script>
 </body>
 </html>

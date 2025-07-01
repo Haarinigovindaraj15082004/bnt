@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>reverse string</h1>
+    <p id="string">String</p>
+    <button onclick="reverse()">Reverse</button>
+    <hr>
+
+    <h1>palindrome</h1>
+    <input type="text" name="palindrome" placeholder="checking for palindrome" id="palindrome">
+    <p id="displayPalindrome"></p>
+    <button onclick="palindromecheck()">Check</button>
+    <hr>
+
+    <h1>largest in array</h1>
+    <p id="displayarr"></p>
+    <button onclick="find()">find</button>
+    <p id="displaylarge"></p>
+    <hr>
+
+    <h1>count no of vowels</h1>
+    <input type="text" placeholder="enter string" name="vowel" id="vowelstring">
+    <button onclick="count()">Count</button>
+    <p id="countofvowel"></p>
+    <hr>
+
+    <h1>factorial</h1>
+    <input type="number" placeholder="enter number" name="factorial" id="factorial">
+    <button onclick="fact()">factorial</button>
+    <p id="displayFactorial"></p>
+    <hr>
+
+    <h1>prime number</h1>
+    <input type="number" placeholder="enter number" name="prime" id="prime">
+    <button onclick="primecheck()">prime or not</button>
+    <p id="displayPrime"></p>
+    <hr>
+
+    <h1>remove duplicate from array</h1>
+    <p id = "original"></p>
+    <p id = "duplicate"></p>
+    <hr>
+
+    <h1>sum of array using reduce</h1>
+    <p id = "reducearray"></p>
+    <p id = "reducedarray"></p>
+    <hr>
+
+    <h1>fibonacci</h1>
+    <input type="number" placeholder="no of terms" id="fibo">
+    <button onclick="generateFibo()">Generate</button>
+    <p id="sequence"></p>
+    <hr>
+
+    <h1>1st non repeating character</h1>
+    <input type="text" placeholder="nonrepeating" id="nonrepeating">
+    <button onclick="nonrepeat()">check</button>
+    <p id="final"></p>
+
+    <script>
+        //reverse string
+        let stringvar = document.getElementById("string");
+        let rev = "";
+        function reverse(){
+        for (let i=stringvar.textContent.length-1;i>=0;i--){
+            rev = rev + stringvar.textContent[i];
+        }
+        document.getElementById("string").textContent = rev;
+    };
+
+        //palindrome
+        let pal = document.getElementById("palindrome");
+        let reversepalin = "";
+        function palindromecheck(){
+        for ( let i=pal.value.length-1;i>=0;i--){
+            reversepalin = reversepalin + pal.value[i];
+        }
+        if (pal.value === reversepalin){
+            document.getElementById("displayPalindrome").textContent = "palindrome";
+        }
+        else{
+            document.getElementById("displayPalindrome").textContent = "not palindrome";
+        }
+    };
+
+    //largest in array
+    let arr = [87865,23,216,20,1445];
+    let max=arr[0];
+    for (let i=0;i<arr.length;i++){
+        if (arr[i]>max){
+            max = arr[i]
+        }
+    document.getElementById("displayarr").textContent = "array: " + arr;
+    function find(){
+    document.getElementById("displaylarge").textContent = "largenum: " + max;
+    }
+    }
+
+    //vowel count
+    function count(){
+    let vowelstring = document.getElementById("vowelstring").value;
+    let countof = 0;
+    for(let i=0;i<vowelstring.length;i++){
+        if(vowelstring[i]==="a" || vowelstring[i]==="e" || vowelstring[i]==="i" || vowelstring[i]==="o" || vowelstring[i]==="u"){
+            countof+=1;
+        }}
+        document.getElementById("countofvowel").textContent = "count of the vowel = " + countof;
+    }
+
+    //factorial
+    function fact(){
+        let factnum = parseInt(document.getElementById("factorial").value);
+        let f = 1;
+        if (factnum===0 || factnum===1){
+            f = 1;
+        }
+        else{
+            for (let i=2 ; i<=factnum ; i++){
+                f = f * i;
+            }
+        }
+        document.getElementById("displayFactorial").textContent = "factorial is " + f;
+    }
+
+    //prime
+    function primecheck(){
+        let p = parseInt(document.getElementById("prime").value);
+        for (let i=2 ; i<p ; i++){
+            if (p%i === 0){
+                document.getElementById("displayPrime").textContent = "Not a prime number";
+                break;
+            }
+            else{
+                document.getElementById("displayPrime").textContent = "prime number"
+            }
+        }
+    }
+
+    //remove duplicate from array
+    let original = [12,45,12,566,85,95,566,565,45,10];
+    let duplicate = original.filter((value,index) => original.indexOf(value) === index);
+    document.getElementById("original").textContent = "array : " + original;
+    document.getElementById("duplicate").textContent = "array after removing duplicate : " + duplicate;
+
+    //sum of array using reduce
+    let a = [10,20,30,40,50];
+    const sum = a.reduce(function(acc,current){
+        return acc+current ;
+    })
+    document.getElementById("reducearray").textContent = "array: " + a;
+    document.getElementById("reducedarray").textContent = "sum: " + sum;
+
+    //fibonacci
+   function fibonacci(n) {
+        if (n === 0) return 0;
+        if (n === 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    function generateFibo(){
+        let countt = parseInt(document.getElementById("fibo").value);
+        let output = [];
+        for (let i=0 ; i<countt ; i++){
+            output.push(fibonacci(i));
+        }
+        document.getElementById("sequence").textContent = "Fibonacci sequence: " + output.join(", ");
+    }
+
+    //1st non repeating character
+    function nonrepeat(){
+        let s = document.getElementById("nonrepeating").value;
+        for (i=0 ; i < s.length ; i++){
+            if(s.indexOf(s[i]) === s.lastIndexOf(s[i])){
+                document.getElementById("final").textContent = "first non repeating character is : " + s[i];
+                break;
+            }
+            else{
+                document.getElementById("final").textContent = "first non repeating character is not found";
+            }
+        }
+    }
+    </script>
+</body>
+</html>
